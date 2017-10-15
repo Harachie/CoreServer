@@ -35,6 +35,7 @@ namespace CoreServer
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             app.UseMvc();
         }
     }
