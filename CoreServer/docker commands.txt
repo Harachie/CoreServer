@@ -1,0 +1,15 @@
+﻿docker run -d -p 6379:6379 --expose 6379 --name redis-server --net devnet --rm redis
+docker run -d --expose 28015 -p 8080:8080 --name rethinkdb-server --net devnet --rm -v G:\DockerShared\RethinkDB:/data rethinkdb
+
+docker network create devnet
+docker network connect devnet <.net core container id>
+
+
+docker ps => alles listen was läuft 
+docker ps -a => alles listen
+docker rm <containerId> => container entfernen
+
+--rm => entfernt den container nachdem er beendet wurde
+--net devnet => fügt ihm den netzwerk devnet hinzu (damit die untereinander kommunizieren können)
+-d => detached (im hintergrund laufend)
+-v G:\DockerShared\RethinkDB:/data => mounten von lokalen verzeichnissen auf containerverzeichnisse

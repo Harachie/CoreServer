@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using CoreServer.Code;
 
 namespace CoreServer
 {
@@ -14,6 +15,8 @@ namespace CoreServer
     {
         public static void Main(string[] args)
         {
+            Repository.Rethink.InitializeAsync().Wait();
+
             BuildWebHost(args).Run();
         }
 
